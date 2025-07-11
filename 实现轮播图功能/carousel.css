@@ -1,0 +1,39 @@
+/* 轮播图容器样式 */
+.carousel-container {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    background: #fff;
+}
+
+/* 图片轨道 */
+.carousel-track img {
+    border-radius: 8px;
+    user-select: none;
+}
+
+/* 箭头按钮 */
+.carousel-arrow {
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.2s;
+}
+
+.carousel-arrow:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* 指示点 */
+.carousel-indicators {
+    z-index: 2;
+}
+
+.carousel-dot {
+    transition: background 0.2s;
+}

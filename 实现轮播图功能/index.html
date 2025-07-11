@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!-- * 参数说明：
+    *   container: DOM元素或选择器字符串
+    *   images: 图片URL数组
+    *   options: 可选配置对象
+    *     - width: 轮播图宽度（默认600px）
+    *     - height: 轮播图高度（默认300px）
+    *     - interval: 自动播放间隔（ms，默认3000）
+    *     - showArrows: 是否显示左右箭头（默认true）
+    *     - showIndicators: 是否显示指示点（默认true）
+    *     - loop: 是否循环播放（默认true）
+    *     - pauseOnHover: 悬停是否暂停（默认true）
+            slide: 是否鼠标左右滑动
+    */ -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图示例</title>
+    <link rel="stylesheet" href="carousel.css">
+</head>
+
+<body>
+    <h2>原生JS轮播图案例</h2>
+    <div id="carousel-demo"></div>
+    <script src="carousel.js"></script>
+    <script>
+        // 示例图片
+        const images = [
+            'https://picsum.photos/id/1015/600/300',
+            'https://picsum.photos/id/1016/600/300',
+            'https://picsum.photos/id/1018/600/300',
+            'https://picsum.photos/id/1020/600/300'
+        ];
+        // 初始化轮播图
+        new Carousel('#carousel-demo', images, {
+            width: 600,
+            height: 300,
+            interval: 2000,
+            showArrows: true,
+            showIndicators: true,
+            loop: true,
+            pauseOnHover: true,
+            slide: true
+
+        });
+    </script>
+</body>
+
+</html>
