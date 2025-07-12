@@ -16,6 +16,7 @@
  *     - showIndicators: 是否显示指示点（默认true）
  *     - loop: 是否循环播放（默认true）
  *     - pauseOnHover: 悬停是否暂停（默认true）
+ *       slide: 是否鼠标左右滑动
  */
 class Carousel {
     constructor(container, images, options = {}) {
