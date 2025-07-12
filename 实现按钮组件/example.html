@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>按钮组件使用示例</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 2rem;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+        }
+
+        .section h2 {
+            color: #34495e;
+            margin-bottom: 1rem;
+        }
+
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .code-block {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            overflow-x: auto;
+            margin-top: 1rem;
+        }
+
+        .result {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #e9ecef;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>按钮组件使用示例</h1>
+
+        <div class="section">
+            <h2>1. 基础按钮</h2>
+            <div class="button-row" id="basic-buttons">
+                <!-- 基础按钮将在这里生成 -->
+            </div>
+            <div class="code-block">
+                // 创建基础按钮
+                const primaryBtn = ButtonUtils.create({
+                text: '主要按钮',
+                type: 'primary',
+                onClick: () => alert('主要按钮被点击了！')
+                });
+
+                const successBtn = ButtonUtils.create({
+                text: '成功按钮',
+                type: 'success',
+                onClick: () => alert('成功按钮被点击了！')
+                });
+
+                const dangerBtn = ButtonUtils.create({
+                text: '危险按钮',
+                type: 'danger',
+                onClick: () => alert('危险按钮被点击了！')
+                });
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>2. 不同尺寸和样式</h2>
+            <div class="button-row" id="size-variant-buttons">
+                <!-- 尺寸和样式按钮将在这里生成 -->
+            </div>
+            <div class="code-block">
+                // 不同尺寸
+                const smallBtn = ButtonUtils.create({
+                text: '小按钮',
+                type: 'primary',
+                size: 'sm'
+                });
+
+                const largeBtn = ButtonUtils.create({
+                text: '大按钮',
+                type: 'primary',
+                size: 'lg'
+                });
+
+                // 不同样式
+                const outlineBtn = ButtonUtils.create({
+                text: '描边按钮',
+                type: 'primary',
+                variant: 'outline'
+                });
+
+                const ghostBtn = ButtonUtils.create({
+                text: '幽灵按钮',
+                type: 'primary',
+                variant: 'ghost'
+                });
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3. 带图标的按钮</h2>
+            <div class="button-row" id="icon-buttons">
+                <!-- 图标按钮将在这里生成 -->
+            </div>
+            <div class="code-block">
+                // 带图标的按钮
+                const addBtn = ButtonUtils.create({
+                text: '添加',
+                type: 'success',
+                icon: { path: 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z' }
+                });
+
+                const deleteBtn = ButtonUtils.create({
+                text: '删除',
+                type: 'danger',
+                icon: { path: 'M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z' }
+                });
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>4. 按钮状态</h2>
+            <div class="button-row" id="state-buttons">
+                <!-- 状态按钮将在这里生成 -->
+            </div>
+            <div class="code-block">
+                // 禁用状态
+                const disabledBtn = ButtonUtils.create({
+                text: '禁用按钮',
+                type: 'primary',
+                disabled: true
+                });
+
+                // 加载状态
+                const loadingBtn = ButtonUtils.create({
+                text: '加载中',
+                type: 'primary',
+                loading: true
+                });
+
+                // 波纹效果
+                const rippleBtn = ButtonUtils.create({
+                text: '波纹效果',
+                type: 'info',
+                ripple: true,
+                onClick: () => console.log('波纹按钮被点击了！')
+                });
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>5. 按钮组</h2>
+            <div id="button-group-container">
+                <!-- 按钮组将在这里生成 -->
+            </div>
+            <div class="code-block">
+                // 创建按钮组
+                const buttonGroup = ButtonUtils.createGroup({
+                buttons: [
+                {
+                text: '保存',
+                type: 'success',
+                onClick: () => alert('保存成功！')
+                },
+                {
+                text: '取消',
+                type: 'secondary',
+                onClick: () => alert('操作已取消')
+                },
+                {
+                text: '删除',
+                type: 'danger',
+                onClick: () => alert('删除确认')
+                }
+                ]
+                });
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>6. 动态操作</h2>
+            <div class="button-row">
+                <button class="btn btn-primary" id="create-btn">创建新按钮</button>
+                <button class="btn btn-secondary" id="toggle-btn">切换状态</button>
+                <button class="btn btn-warning" id="change-style-btn">改变样式</button>
+            </div>
+            <div class="result" id="dynamic-result">
+                <p>点击上面的按钮来测试动态操作</p>
+            </div>
+            <div class="code-block">
+                // 动态创建按钮
+                document.getElementById('create-btn').addEventListener('click', () => {
+                const newBtn = ButtonUtils.create({
+                text: '动态按钮',
+                type: 'info',
+                ripple: true,
+                onClick: () => alert('动态按钮被点击了！')
+                });
+                document.getElementById('dynamic-result').appendChild(newBtn.getElement());
+                });
+
+                // 动态改变按钮状态
+                let isEnabled = true;
+                document.getElementById('toggle-btn').addEventListener('click', function() {
+                if (isEnabled) {
+                this.setDisabled(true);
+                this.setText('已禁用');
+                } else {
+                this.setDisabled(false);
+                this.setText('切换状态');
+                }
+                isEnabled = !isEnabled;
+                });
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>7. 使用预设</h2>
+            <div class="button-row" id="preset-buttons">
+                <!-- 预设按钮将在这里生成 -->
+            </div>
+            <div class="code-block">
+                // 使用预设配置
+                const presetButtons = [
+                ButtonUtils.withPreset({ text: '预设主要' }, 'primary'),
+                ButtonUtils.withPreset({ text: '预设成功' }, 'success'),
+                ButtonUtils.withPreset({ text: '预设描边' }, 'primary', 'outline'),
+                ButtonUtils.withPreset({ text: '预设小按钮' }, 'danger', 'small'),
+                ButtonUtils.withPreset({ text: '预设大按钮' }, 'warning', 'large'),
+                ButtonUtils.withPreset({ text: '预设波纹' }, 'info', 'ripple')
+                ].map(config => ButtonUtils.create(config));
+            </div>
+        </div>
+    </div>
+
+    <script src="button.js"></script>
+    <script>
+        // 等待DOM加载完成
+        document.addEventListener('DOMContentLoaded', function () {
+            initBasicButtons();
+            initSizeVariantButtons();
+            initIconButtons();
+            initStateButtons();
+            initButtonGroup();
+            initPresetButtons();
+            initDynamicOperations();
+        });
+
+        function initBasicButtons() {
+            const container = document.getElementById('basic-buttons');
+
+            const buttons = [
+                ButtonUtils.create({
+                    text: '主要按钮',
+                    type: 'primary',
+                    onClick: () => alert('主要按钮被点击了！')
+                }),
+                ButtonUtils.create({
+                    text: '成功按钮',
+                    type: 'success',
+                    onClick: () => alert('成功按钮被点击了！')
+                }),
+                ButtonUtils.create({
+                    text: '危险按钮',
+                    type: 'danger',
+                    onClick: () => alert('危险按钮被点击了！')
+                }),
+                ButtonUtils.create({
+                    text: '警告按钮',
+                    type: 'warning',
+                    onClick: () => alert('警告按钮被点击了！')
+                }),
+                ButtonUtils.create({
+                    text: '信息按钮',
+                    type: 'info',
+                    onClick: () => alert('信息按钮被点击了！')
+                })
+            ];
+
+            buttons.forEach(btn => container.appendChild(btn.getElement()));
+        }
+
+        function initSizeVariantButtons() {
+            const container = document.getElementById('size-variant-buttons');
+
+            const buttons = [
+                ButtonUtils.create({
+                    text: '小按钮',
+                    type: 'primary',
+                    size: 'sm'
+                }),
+                ButtonUtils.create({
+                    text: '默认按钮',
+                    type: 'primary'
+                }),
+                ButtonUtils.create({
+                    text: '大按钮',
+                    type: 'primary',
+                    size: 'lg'
+                }),
+                ButtonUtils.create({
+                    text: '描边按钮',
+                    type: 'primary',
+                    variant: 'outline'
+                }),
+                ButtonUtils.create({
+                    text: '幽灵按钮',
+                    type: 'primary',
+                    variant: 'ghost'
+                })
+            ];
+
+            buttons.forEach(btn => container.appendChild(btn.getElement()));
+        }
+
+        function initIconButtons() {
+            const container = document.getElementById('icon-buttons');
+
+            const buttons = [
+                ButtonUtils.create({
+                    text: '添加',
+                    type: 'success',
+                    icon: { path: 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z' }
+                }),
+                ButtonUtils.create({
+                    text: '删除',
+                    type: 'danger',
+                    icon: { path: 'M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z' }
+                }),
+                ButtonUtils.create({
+                    text: '编辑',
+                    type: 'info',
+                    icon: { path: 'M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z' }
+                })
+            ];
+
+            buttons.forEach(btn => container.appendChild(btn.getElement()));
+        }
+
+        function initStateButtons() {
+            const container = document.getElementById('state-buttons');
+
+            const buttons = [
+                ButtonUtils.create({
+                    text: '禁用按钮',
+                    type: 'primary',
+                    disabled: true
+                }),
+                ButtonUtils.create({
+                    text: '加载中',
+                    type: 'primary',
+                    loading: true
+                }),
+                ButtonUtils.create({
+                    text: '波纹效果',
+                    type: 'info',
+                    ripple: true,
+                    onClick: () => console.log('波纹按钮被点击了！')
+                })
+            ];
+
+            buttons.forEach(btn => container.appendChild(btn.getElement()));
+        }
+
+        function initButtonGroup() {
+            const container = document.getElementById('button-group-container');
+
+            const buttonGroup = ButtonUtils.createGroup({
+                buttons: [
+                    {
+                        text: '保存',
+                        type: 'success',
+                        onClick: () => alert('保存成功！')
+                    },
+                    {
+                        text: '取消',
+                        type: 'secondary',
+                        onClick: () => alert('操作已取消')
+                    },
+                    {
+                        text: '删除',
+                        type: 'danger',
+                        onClick: () => alert('删除确认')
+                    }
+                ]
+            });
+
+            container.appendChild(buttonGroup.getElement());
+        }
+
+        function initPresetButtons() {
+            const container = document.getElementById('preset-buttons');
+
+            const presetButtons = [
+                ButtonUtils.withPreset({ text: '预设主要' }, 'primary'),
+                ButtonUtils.withPreset({ text: '预设成功' }, 'success'),
+                ButtonUtils.withPreset({ text: '预设描边' }, 'primary', 'outline'),
+                ButtonUtils.withPreset({ text: '预设小按钮' }, 'danger', 'small'),
+                ButtonUtils.withPreset({ text: '预设大按钮' }, 'warning', 'large'),
+                ButtonUtils.withPreset({ text: '预设波纹' }, 'info', 'ripple')
+            ].map(config => ButtonUtils.create(config));
+
+            presetButtons.forEach(btn => container.appendChild(btn.getElement()));
+        }
+
+        function initDynamicOperations() {
+            // 动态创建按钮
+            document.getElementById('create-btn').addEventListener('click', () => {
+                const newBtn = ButtonUtils.create({
+                    text: '动态按钮',
+                    type: 'info',
+                    ripple: true,
+                    onClick: () => alert('动态按钮被点击了！')
+                });
+                document.getElementById('dynamic-result').appendChild(newBtn.getElement());
+            });
+
+            // 动态改变按钮状态
+            let isEnabled = true;
+            document.getElementById('toggle-btn').addEventListener('click', function () {
+                if (isEnabled) {
+                    this.setDisabled(true);
+                    this.setText('已禁用');
+                } else {
+                    this.setDisabled(false);
+                    this.setText('切换状态');
+                }
+                isEnabled = !isEnabled;
+            });
+
+            // 改变样式
+            let styleIndex = 0;
+            const styles = ['primary', 'success', 'danger', 'warning', 'info'];
+            document.getElementById('change-style-btn').addEventListener('click', function () {
+                styleIndex = (styleIndex + 1) % styles.length;
+                this.setType(styles[styleIndex]);
+                this.setText(`样式 ${styles[styleIndex]}`);
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>按钮组件演示</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>按钮组件演示</h1>
+
+        <section class="demo-section">
+            <h2>基础按钮</h2>
+            <div class="button-group">
+                <button class="btn btn-primary">主要按钮</button>
+                <button class="btn btn-secondary">次要按钮</button>
+                <button class="btn btn-success">成功按钮</button>
+                <button class="btn btn-danger">危险按钮</button>
+                <button class="btn btn-warning">警告按钮</button>
+                <button class="btn btn-info">信息按钮</button>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>按钮尺寸</h2>
+            <div class="button-group">
+                <button class="btn btn-primary btn-sm">小按钮</button>
+                <button class="btn btn-primary">默认按钮</button>
+                <button class="btn btn-primary btn-lg">大按钮</button>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>按钮样式变体</h2>
+            <div class="button-group">
+                <button class="btn btn-primary">实心按钮</button>
+                <button class="btn btn-primary btn-outline">描边按钮</button>
+                <button class="btn btn-primary btn-ghost">幽灵按钮</button>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>按钮状态</h2>
+            <div class="button-group">
+                <button class="btn btn-primary" disabled>禁用按钮</button>
+                <button class="btn btn-primary btn-loading">加载中</button>
+                <button class="btn btn-primary" id="toggleBtn">切换状态</button>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>图标按钮</h2>
+            <div class="button-group">
+                <button class="btn btn-primary btn-icon">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                    </svg>
+                    添加
+                </button>
+                <button class="btn btn-danger btn-icon">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" />
+                    </svg>
+                    删除
+                </button>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>按钮组</h2>
+            <div class="btn-group">
+                <button class="btn btn-primary">左</button>
+                <button class="btn btn-primary">中</button>
+                <button class="btn btn-primary">右</button>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>动态创建按钮</h2>
+            <div class="button-group" id="dynamicButtons">
+                <!-- 动态按钮将在这里生成 -->
+            </div>
+            <button class="btn btn-secondary" id="addButton">添加新按钮</button>
+        </section>
+
+        <section class="demo-section">
+            <h2>事件演示</h2>
+            <div class="button-group">
+                <button class="btn btn-primary" id="clickBtn">点击我</button>
+                <button class="btn btn-success" id="hoverBtn">悬停效果</button>
+                <button class="btn btn-warning" id="rippleBtn">波纹效果</button>
+            </div>
+            <div id="eventLog" class="event-log"></div>
+        </section>
+    </div>
+
+    <script src="button.js"></script>
+    <script src="demo.js"></script>
+</body>
+
+</html>

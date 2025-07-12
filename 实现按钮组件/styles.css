@@ -1,0 +1,511 @@
+/* 重置样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    font-size: 2.5rem;
+}
+
+.demo-section {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.demo-section h2 {
+    margin-bottom: 1rem;
+    color: #34495e;
+    font-size: 1.5rem;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* 基础按钮样式 */
+.btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
+    white-space: nowrap;
+    min-width: 80px;
+}
+
+/* 按钮颜色变体 */
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: #545b62;
+    border-color: #545b62;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+.btn-success:hover:not(:disabled) {
+    background-color: #1e7e34;
+    border-color: #1e7e34;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover:not(:disabled) {
+    background-color: #c82333;
+    border-color: #c82333;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: #212529;
+    border-color: #ffc107;
+}
+
+.btn-warning:hover:not(:disabled) {
+    background-color: #e0a800;
+    border-color: #e0a800;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    color: white;
+    border-color: #17a2b8;
+}
+
+.btn-info:hover:not(:disabled) {
+    background-color: #138496;
+    border-color: #138496;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3);
+}
+
+/* 按钮尺寸 */
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    min-width: 60px;
+}
+
+.btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    min-width: 100px;
+}
+
+/* 按钮样式变体 */
+.btn-outline {
+    background-color: transparent;
+}
+
+.btn-outline.btn-primary {
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-outline.btn-primary:hover:not(:disabled) {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-outline.btn-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-outline.btn-secondary:hover:not(:disabled) {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-outline.btn-success {
+    color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-outline.btn-success:hover:not(:disabled) {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-outline.btn-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-outline.btn-danger:hover:not(:disabled) {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-outline.btn-warning {
+    color: #ffc107;
+    border-color: #ffc107;
+}
+
+.btn-outline.btn-warning:hover:not(:disabled) {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.btn-outline.btn-info {
+    color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.btn-outline.btn-info:hover:not(:disabled) {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-ghost {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.btn-ghost.btn-primary {
+    color: #007bff;
+}
+
+.btn-ghost.btn-primary:hover:not(:disabled) {
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.btn-ghost.btn-secondary {
+    color: #6c757d;
+}
+
+.btn-ghost.btn-secondary:hover:not(:disabled) {
+    background-color: rgba(108, 117, 125, 0.1);
+}
+
+.btn-ghost.btn-success {
+    color: #28a745;
+}
+
+.btn-ghost.btn-success:hover:not(:disabled) {
+    background-color: rgba(40, 167, 69, 0.1);
+}
+
+.btn-ghost.btn-danger {
+    color: #dc3545;
+}
+
+.btn-ghost.btn-danger:hover:not(:disabled) {
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+.btn-ghost.btn-warning {
+    color: #ffc107;
+}
+
+.btn-ghost.btn-warning:hover:not(:disabled) {
+    background-color: rgba(255, 193, 7, 0.1);
+}
+
+.btn-ghost.btn-info {
+    color: #17a2b8;
+}
+
+.btn-ghost.btn-info:hover:not(:disabled) {
+    background-color: rgba(23, 162, 184, 0.1);
+}
+
+/* 按钮状态 */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.btn-loading {
+    position: relative;
+    color: transparent !important;
+}
+
+.btn-loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 图标按钮 */
+.btn-icon {
+    gap: 0.5rem;
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.btn-sm .icon {
+    width: 14px;
+    height: 14px;
+}
+
+.btn-lg .icon {
+    width: 22px;
+    height: 22px;
+}
+
+/* 按钮组 */
+.btn-group {
+    display: inline-flex;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-group .btn {
+    border-radius: 0;
+    margin: 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-group .btn:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.btn-group .btn:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-right: none;
+}
+
+/* 波纹效果 */
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* 事件日志 */
+.event-log {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+    max-height: 200px;
+    overflow-y: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 0.875rem;
+}
+
+.event-log .log-entry {
+    margin-bottom: 0.5rem;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.event-log .log-entry:last-child {
+    border-bottom: none;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .demo-section {
+        padding: 1rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-group .btn {
+        border-radius: 0;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-group .btn:first-child {
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        border-bottom-left-radius: 0;
+    }
+
+    .btn-group .btn:last-child {
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+        border-top-right-radius: 0;
+        border-bottom: none;
+    }
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+
+    .demo-section {
+        background-color: #2d2d2d;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .demo-section h2 {
+        color: #e0e0e0;
+    }
+
+    .event-log {
+        background-color: #2d2d2d;
+        border-color: #404040;
+        color: #e0e0e0;
+    }
+
+    .event-log .log-entry {
+        border-bottom-color: #404040;
+    }
+}
+
+/* 焦点样式 */
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.btn:focus:not(:focus-visible) {
+    box-shadow: none;
+}
+
+/* 活跃状态 */
+.btn:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 打印样式 */
+@media print {
+    .btn {
+        border: 1px solid #000;
+        background-color: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+    }
+
+    .btn:hover,
+    .btn:focus,
+    .btn:active {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+}
